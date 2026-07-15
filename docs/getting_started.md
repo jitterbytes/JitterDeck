@@ -84,9 +84,11 @@ On successful flash, the device shows the boot animation - glitch effect resolvi
 
 ## Power Notes
 
-**USB powerbanks with auto-shutoff:** Some powerbanks cut power to devices drawing under ~100mA. The ESP32-C3 + OLED at idle draws ~40mA, which can trigger this. If your device shuts off after ~20 seconds on a powerbank, your powerbank has auto-shutoff. Use one with an always-on mode, or power from a raw LiPo directly.
+**USB powerbanks with auto-shutoff:** Some powerbanks cut power to devices drawing under ~100mA. The ESP32-C3 + OLED at idle draws ~40mA, which can trigger this. If your device shuts off after ~20 seconds on a powerbank, your powerbank has auto-shutoff. Use one with an always-on mode, or power from a raw LiPo directly. 
 
-**For field use:** A 3.7V LiPo connected via a TP4056 module (with protection) gives clean regulated power with no auto-shutoff concerns. This is the recommended approach for v2.
+When the sensor is connected to the device and its test program is running, the **power bank might not auto-shut off**, as there will be sufficient load to keep the power bank on. 
+
+> For next version, will develop a full custom hardware so that the device will be battery powered
 
 ---
 

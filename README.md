@@ -4,7 +4,7 @@ A portable embedded hardware validation tool for engineers who want to test sens
 
 > Connect a sensor. Select its profile. Instantly see live data, run diagnostics, verify your wiring.
 
-![JitterDeck](img/JitterDeck_PCB.png)
+![JitterDeck](img/jitterdeck_pcb.png)
 
 ---
 
