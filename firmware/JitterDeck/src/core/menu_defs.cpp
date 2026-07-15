@@ -8,6 +8,7 @@
 static const MenuItem I2C_SENSOR_PROFILES[] =
 {
     { "LIS2MDL",          TOOL_I2C_LIS2MDL,  nullptr, 0 },  // added this
+    { "LM75A",            TOOL_I2C_LM75A,  nullptr, 0 },
     { "Custom I2C",       TOOL_I2C_CUSTOM,   nullptr, 0 },
 };
 
@@ -15,7 +16,7 @@ static const MenuItem I2C_SENSOR_PROFILES[] =
 static const MenuItem I2C_MENU[] =
 {
     { "I2C Scanner",      TOOL_I2C_SCANNER,  nullptr,           0 },
-    { "Sensor Profiles",  TOOL_NONE,         I2C_SENSOR_PROFILES, 2 },  // updated the count
+    { "Sensor Profiles",  TOOL_NONE,         I2C_SENSOR_PROFILES, 3 },  // updated the count
 };
 
 // =============================
@@ -25,17 +26,15 @@ static const MenuItem I2C_MENU[] =
 // SPI Child Node
 static const MenuItem SPI_SENSOR_PROFILES[] =
 {
-    { "MAX6675",          TOOL_SPI_MAX6675,  nullptr, 0 },
-    { "MAX31855",         TOOL_SPI_MAX31855, nullptr, 0 },
-    { "W25Q Flash",       TOOL_SPI_W25Q,     nullptr, 0 },
-    { "RFID RC522",       TOOL_SPI_RC522,    nullptr, 0 },
+    // add sensor here and update the count in SPI_MENU below
+    // Then go to screens.cpp
     { "Custom SPI",       TOOL_SPI_CUSTOM,   nullptr, 0 },
 };
 
 // SPI Branch Node
 static const MenuItem SPI_MENU[] =
 {
-    { "Sensor Profiles",  TOOL_NONE,         SPI_SENSOR_PROFILES, 5 },
+    { "Sensor Profiles",  TOOL_NONE,         SPI_SENSOR_PROFILES, 1 },
 };
 
 // =============================

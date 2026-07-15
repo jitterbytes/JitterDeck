@@ -14,14 +14,13 @@ enum ToolID : uint8_t
 
     // I2C
     TOOL_I2C_SCANNER,
-    TOOL_I2C_LIS2MDL,   // added this
+    TOOL_I2C_LIS2MDL,   
+    TOOL_I2C_LM75A,
     TOOL_I2C_CUSTOM,
 
     // SPI
-    TOOL_SPI_MAX6675,
-    TOOL_SPI_MAX31855,
-    TOOL_SPI_W25Q,
-    TOOL_SPI_RC522,
+    // Add SPI sensor here as TOOL_SPI_<Sensor>
+    // Then go to menu_defs.cpp Sensor Profiles[]
     TOOL_SPI_CUSTOM,
 
     // UART

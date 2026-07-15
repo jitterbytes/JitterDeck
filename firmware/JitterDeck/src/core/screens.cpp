@@ -8,6 +8,7 @@
 #include "menu_defs.h"
 #include "i2c_scanner.h"
 #include "lis2mdl.h"    // added this
+#include "lm75a.h"
 
 extern U8G2_SH1106_128X64_NONAME_F_HW_I2C u8g2;
 
@@ -24,11 +25,9 @@ static const char* toolName(ToolID id)
     {
         case TOOL_I2C_SCANNER:       return "I2C Scanner";
         case TOOL_I2C_LIS2MDL:       return "LIS2MDL";  // added this
+        case TOOL_I2C_LM75A:         return "LM75A";
         case TOOL_I2C_CUSTOM:        return "Custom I2C";
-        case TOOL_SPI_MAX6675:       return "MAX6675";
-        case TOOL_SPI_MAX31855:      return "MAX31855";
-        case TOOL_SPI_W25Q:          return "W25Q Flash";
-        case TOOL_SPI_RC522:         return "RFID RC522";
+        // add here spi sensor
         case TOOL_SPI_CUSTOM:        return "Custom SPI";
         case TOOL_UART_MONITOR:      return "Serial Monitor";
         case TOOL_UART_ECHO:         return "Serial Echo";
@@ -115,6 +114,7 @@ void onToolEnter(ToolID id)
     {
         case TOOL_I2C_SCANNER: resetI2CScanner(); break;
         case TOOL_I2C_LIS2MDL:  resetLIS2MDL();    break;   // added this
+        case TOOL_I2C_LM75A:  resetLM75A();    break;
         default: break;
     }
 }
@@ -136,6 +136,10 @@ void drawToolScreen()
         
         case TOOL_I2C_LIS2MDL:  // added this
             drawLIS2MDL();
+            break;
+
+        case TOOL_I2C_LM75A:  
+            drawLM75A();
             break;
 
         // == All other tools: stub until implemented ==================
@@ -165,6 +169,12 @@ void handleToolScreen()
         case TOOL_I2C_LIS2MDL:  // added this
             handleLIS2MDL();
             break;
+
+        case TOOL_I2C_LM75A:  
+            handleLM75A();
+            break;
+
+        // add here sensor's handle function
 
         // == Stub handler: TAP SELECT → back to menu ==================
         default:

@@ -59,7 +59,7 @@ static const KnownDevice KNOWN_DEVICES[] =
     { 0x40, "INA219"        },
     { 0x44, "SHT31"         },
     { 0x45, "SHT31"         },
-    { 0x48, "ADS1115"       },
+    { 0x48, "LM75A"         },  // LM75A (all addr pins GND)
     { 0x4A, "ADS1115"       },
     { 0x57, "AT24C EEPROM"  },
     { 0x5C, "AM2320"        },
