@@ -1,6 +1,6 @@
 # JitterDeck
 
-A portable embedded hardware validation tool for engineers who want to test sensors and communication interfaces fast — without writing dedicated firmware every time.
+A portable embedded hardware validation tool for engineers who want to test sensors and communication interfaces fast - without writing dedicated firmware every time.
 
 > Connect a sensor. Select its profile. Instantly see live data, run diagnostics, verify your wiring.
 
@@ -40,5 +40,5 @@ It is a practical companion for embedded development, debugging, prototyping, an
 
 ## License
 
-MIT License — see `LICENSE` file.
+MIT License - see `LICENSE` file.
 Free to use, modify, and distribute. Attribution appreciated.
