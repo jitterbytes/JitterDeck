@@ -68,6 +68,7 @@ static const KnownDevice KNOWN_DEVICES[] =
     { 0x69, "MPU6050"       },
     { 0x76, "BME/BMP280"    },
     { 0x77, "BME/BMP280"    },
+    { 0x1E, "LIS2MDL"       },  // < add sensor along with address
 };
 
 static const uint8_t KNOWN_COUNT =

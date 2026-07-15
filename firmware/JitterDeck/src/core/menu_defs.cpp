@@ -7,14 +7,7 @@
 // I2C Child Node
 static const MenuItem I2C_SENSOR_PROFILES[] =
 {
-    { "BME280",           TOOL_I2C_BME280,   nullptr, 0 },
-    { "BMP280",           TOOL_I2C_BMP280,   nullptr, 0 },
-    { "MPU6050",          TOOL_I2C_MPU6050,  nullptr, 0 },
-    { "BH1750",           TOOL_I2C_BH1750,   nullptr, 0 },
-    { "AHT20",            TOOL_I2C_AHT20,    nullptr, 0 },
-    { "SHT31",            TOOL_I2C_SHT31,    nullptr, 0 },
     { "LIS2MDL",          TOOL_I2C_LIS2MDL,  nullptr, 0 },  // added this
-    { "SSD1306 OLED",     TOOL_I2C_SSD1306,  nullptr, 0 },
     { "Custom I2C",       TOOL_I2C_CUSTOM,   nullptr, 0 },
 };
 
@@ -22,7 +15,7 @@ static const MenuItem I2C_SENSOR_PROFILES[] =
 static const MenuItem I2C_MENU[] =
 {
     { "I2C Scanner",      TOOL_I2C_SCANNER,  nullptr,           0 },
-    { "Sensor Profiles",  TOOL_NONE,         I2C_SENSOR_PROFILES, 9 },  // updated the count
+    { "Sensor Profiles",  TOOL_NONE,         I2C_SENSOR_PROFILES, 2 },  // updated the count
 };
 
 // =============================

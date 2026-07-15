@@ -23,14 +23,7 @@ static const char* toolName(ToolID id)
     switch (id)
     {
         case TOOL_I2C_SCANNER:       return "I2C Scanner";
-        case TOOL_I2C_BME280:        return "BME280";
-        case TOOL_I2C_BMP280:        return "BMP280";
-        case TOOL_I2C_MPU6050:       return "MPU6050";
-        case TOOL_I2C_BH1750:        return "BH1750";
-        case TOOL_I2C_AHT20:         return "AHT20";
-        case TOOL_I2C_SHT31:         return "SHT31";
         case TOOL_I2C_LIS2MDL:       return "LIS2MDL";  // added this
-        case TOOL_I2C_SSD1306:       return "SSD1306 OLED";
         case TOOL_I2C_CUSTOM:        return "Custom I2C";
         case TOOL_SPI_MAX6675:       return "MAX6675";
         case TOOL_SPI_MAX31855:      return "MAX31855";

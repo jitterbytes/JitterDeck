@@ -14,14 +14,7 @@ enum ToolID : uint8_t
 
     // I2C
     TOOL_I2C_SCANNER,
-    TOOL_I2C_BME280,
-    TOOL_I2C_BMP280,
-    TOOL_I2C_MPU6050,
-    TOOL_I2C_BH1750,
-    TOOL_I2C_AHT20,
-    TOOL_I2C_SHT31,
     TOOL_I2C_LIS2MDL,   // added this
-    TOOL_I2C_SSD1306,
     TOOL_I2C_CUSTOM,
 
     // SPI
