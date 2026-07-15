@@ -14,9 +14,10 @@ static const char*   TAGLINE        = "HW VALIDATION TOOL";
 static const uint8_t TITLE_LEN      = 10;
 
 // Timing windows (ms)
-static const uint16_t GLITCH_END    = 3000;  // pure scramble phase
-static const uint16_t RESOLVE_END   = 4000;  // letter-by-letter resolve
-static const uint16_t BOOT_TOTAL    = 10000;  // must match deck_v1.ino transition
+static const uint16_t GLITCH_END      = 1500;    // Pure scramble phase
+static const uint16_t RESOLVE_END     = 4500;    // Letter-by-letter resolve
+static const uint16_t SHOW_LAYOUT_START = 5300;  // Holds clean title for 800ms
+static const uint16_t BOOT_TOTAL      = 7000;    // Must match BOOT_DURATION_MS in config.h
 
 // Progress bar geometry
 static const uint8_t BAR_X         = 4;
@@ -128,17 +129,24 @@ void drawBootScreen()
         u8g2.drawStr(24, 22, _glitchBuf);
     }
 
-    // == Phase 3: Resolved title + tagline + progress bar ==========
+    // == Phase 3: Clean Title Hold (RESOLVE_END – SHOW_LAYOUT_START) ==
+    else if (elapsed < SHOW_LAYOUT_START)
+    {
+        // Title is fully resolved, but tagline/progress bar are hidden.
+        u8g2.drawStr(24, 22, TITLE);
+    }
+
+    // == Phase 4: Full Layout + Progress Bar (SHOW_LAYOUT_START – BOOT_TOTAL) ==
     else
     {
         u8g2.drawStr(24, 22, TITLE);
         
-
         u8g2.setFont(u8g2_font_5x7_tr);
         u8g2.drawStr(14, 34, TAGLINE);
 
-        const uint32_t window   = BOOT_TOTAL - RESOLVE_END;
-        const uint32_t progress = elapsed - RESOLVE_END;
+        // Progress bar fills over the remaining time window
+        const uint32_t window   = BOOT_TOTAL - SHOW_LAYOUT_START;
+        const uint32_t progress = elapsed - SHOW_LAYOUT_START;
         const uint8_t  filled   = (uint8_t)((progress * NUM_SEGMENTS) / window);
 
         drawProgressBar(filled < NUM_SEGMENTS ? filled : NUM_SEGMENTS);

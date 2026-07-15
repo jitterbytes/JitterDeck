@@ -20,7 +20,7 @@
 // =========================================
 // Boot
 // =========================================
-#define BOOT_DURATION_MS  10000  // must match BOOT_TOTAL in boot_screen.cpp
+#define BOOT_DURATION_MS  7000  // must match BOOT_TOTAL in boot_screen.cpp
 
 // =========================================
 // Navigation Stack
