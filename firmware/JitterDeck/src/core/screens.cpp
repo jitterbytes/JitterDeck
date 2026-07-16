@@ -9,6 +9,9 @@
 #include "i2c_scanner.h"
 #include "lis2mdl.h"    // added this
 #include "lm75a.h"
+#include "dio_input_mon.h"
+#include "dio_output_toggle.h"
+#include "dio_pwm_gen.h"
 
 extern U8G2_SH1106_128X64_NONAME_F_HW_I2C u8g2;
 
@@ -23,12 +26,16 @@ static const char* toolName(ToolID id)
 {
     switch (id)
     {
+        // i2c
         case TOOL_I2C_SCANNER:       return "I2C Scanner";
         case TOOL_I2C_LIS2MDL:       return "LIS2MDL";  // added this
         case TOOL_I2C_LM75A:         return "LM75A";
         case TOOL_I2C_CUSTOM:        return "Custom I2C";
-        // add here spi sensor
+        
+        // spi
         case TOOL_SPI_CUSTOM:        return "Custom SPI";
+        
+        // uart
         case TOOL_UART_MONITOR:      return "Serial Monitor";
         case TOOL_UART_ECHO:         return "Serial Echo";
         case TOOL_UART_BAUD_TEST:    return "Baud Rate Tester";
@@ -112,9 +119,12 @@ void onToolEnter(ToolID id)
 {
     switch (id)
     {
-        case TOOL_I2C_SCANNER: resetI2CScanner(); break;
-        case TOOL_I2C_LIS2MDL:  resetLIS2MDL();    break;   // added this
-        case TOOL_I2C_LM75A:  resetLM75A();    break;
+        case TOOL_I2C_SCANNER:       resetI2CScanner(); break;
+        case TOOL_I2C_LIS2MDL:       resetLIS2MDL();    break;   // added this
+        case TOOL_I2C_LM75A:         resetLM75A();    break;
+        case TOOL_DIO_INPUT_MON:     resetDIOInputMon();    break;
+        case TOOL_DIO_OUTPUT_TOGGLE: resetDIOOutputToggle();break;
+        case TOOL_DIO_PWM_GEN:       resetDIOPWMGen();      break;
         default: break;
     }
 }
@@ -140,6 +150,18 @@ void drawToolScreen()
 
         case TOOL_I2C_LM75A:  
             drawLM75A();
+            break;
+
+        case TOOL_DIO_INPUT_MON:
+            drawDIOInputMon();
+            break;
+ 
+        case TOOL_DIO_OUTPUT_TOGGLE:
+            drawDIOOutputToggle();
+            break;
+ 
+        case TOOL_DIO_PWM_GEN:
+            drawDIOPWMGen();
             break;
 
         // == All other tools: stub until implemented ==================
@@ -172,6 +194,18 @@ void handleToolScreen()
 
         case TOOL_I2C_LM75A:  
             handleLM75A();
+            break;
+
+        case TOOL_DIO_INPUT_MON:
+            handleDIOInputMon();
+            break;
+ 
+        case TOOL_DIO_OUTPUT_TOGGLE:
+            handleDIOOutputToggle();
+            break;
+ 
+        case TOOL_DIO_PWM_GEN:
+            handleDIOPWMGen();
             break;
 
         // add here sensor's handle function

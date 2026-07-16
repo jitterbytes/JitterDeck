@@ -7,6 +7,20 @@
 #define I2C_SDA   8
 #define I2C_SCL   9
 
+// =========================================
+// Hardware - UART
+// =========================================
+#define UART_TX   20
+#define UART_RX   21
+ 
+// =========================================
+// Hardware - Digital IO
+// GPIO 5 - labelled "GPIO" on PCB silkscreen
+// GPIO 4 - labelled "ADC"  on PCB silkscreen
+// =========================================
+#define DIO_PIN   5   // digital IO tools: input monitor, output toggle, pulse counter, PWM
+#define ADC_PIN   4   // analog tools: ADC monitor, voltage meter
+
 // ===========================================
 // Hardware - Buttons & Timing Constants
 // ===========================================
