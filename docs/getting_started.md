@@ -78,7 +78,7 @@ Monitor -  Ctrl+Alt+S  (115200 baud)
 
 ## First Boot
 
-On successful flash, the device shows the boot animation - glitch effect resolving into **JITTERDECK**, then a chunky progress bar. After 10 seconds it transitions to the main menu. Navigate with UP/DOWN, long press SELECT to enter, short press SELECT to go back.
+On successful flash, the device shows the boot animation - glitch effect resolving into **JITTERDECK**, then a chunky progress bar. After 7 seconds it transitions to the main menu. Navigate with UP/DOWN, long press SELECT to enter, short press SELECT to go back.
 
 ---
 
